@@ -87,6 +87,12 @@ public class InquiryController {
 
 	}
 
+//	@ExceptionHandler(InquiryNotFoundException.class)
+//	public String handleException(InquiryNotFoundException e, Model model) {
+//		model.addAttribute("messagr", e);
+//		return "error/CustomPage";
+//	}
+
 
 
 }
