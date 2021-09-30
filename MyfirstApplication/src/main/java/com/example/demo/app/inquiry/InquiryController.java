@@ -33,14 +33,14 @@ public class InquiryController {
 		model.addAttribute("inquiryList", list);
 		model.addAttribute("title", "Inquiry Index");
 
-		return "inquiry/index";
+		return "inquiry/index_boot";
 
 	}
 
 	@GetMapping("/form")
 	public String form(Inquiryform inquiryForm, Model model) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 	@PostMapping("/form")
@@ -48,18 +48,18 @@ public class InquiryController {
 			Model model,
 			@ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 	@PostMapping("/confirm")
 	public String confirm(@Validated Inquiryform inquiryForm, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			model.addAttribute("title", "Inquiry Form");
-			return "inquiry/form";
+			return "inquiry/form_boot";
 		}
 
 		model.addAttribute("title", "confirm Page");
-		return "inquiry/confirm";
+		return "inquiry/confirm_boot";
 	}
 
 	@PostMapping("/complete")
